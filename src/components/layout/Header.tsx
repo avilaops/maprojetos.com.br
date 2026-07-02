@@ -68,7 +68,7 @@ export function Header() {
           'fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full',
           scrolled 
             ? 'glass-header py-3 shadow-[0_4px_30px_rgba(0,0,0,0.02)]' 
-            : 'bg-transparent py-5 border-b border-transparent'
+            : 'glass-header py-5 border-b border-transparent'
         )}
       >
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">

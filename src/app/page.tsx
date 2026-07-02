@@ -58,7 +58,7 @@ export default function Home() {
   return (
     <div className="w-full bg-noise-texture">
       {/* 1. HERO SECTION */}
-      <section className="relative min-h-[90vh] flex items-center justify-center bg-brand-light bg-grid-technical pt-10 overflow-hidden border-b border-brand-concrete-light/30">
+      <section className="relative bg-brand-light bg-grid-technical pt-12 pb-20 overflow-hidden border-b border-brand-concrete-light/30">
         {/* Technical Layout Lines */}
         <div className="absolute left-10 top-0 bottom-0 w-[1px] bg-brand-concrete-light/20 hidden lg:block" />
         <div className="absolute right-10 top-0 bottom-0 w-[1px] bg-brand-concrete-light/20 hidden lg:block" />
