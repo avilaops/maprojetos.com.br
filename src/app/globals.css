@@ -1,0 +1,120 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand-dark: #121212;
+  --color-brand-light: #FBFBF9;
+  --color-brand-red: #7F1D1D;
+  --color-brand-red-hover: #991B1B;
+  --color-brand-concrete: #78716C;
+  --color-brand-concrete-light: #E7E5E4;
+  --color-brand-concrete-dark: #44403C;
+}
+
+:root {
+  --background: #FBFBF9;
+  --foreground: #121212;
+  --scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom Utilities */
+.bg-grid-technical {
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(120, 113, 108, 0.05) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(120, 113, 108, 0.05) 1px, transparent 1px);
+}
+
+.text-stroke-architect {
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.glass-header {
+  background-color: rgba(251, 251, 249, 0.8);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(120, 113, 108, 0.1);
+}
+
+.glass-header-dark {
+  background-color: rgba(18, 18, 18, 0.85);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(120, 113, 108, 0.15);
+}
+
+/* Hide scrollbars but keep functionality */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+/* Custom Noise Texture Overlay */
+.bg-noise-texture {
+  position: relative;
+}
+.bg-noise-texture::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.015;
+  pointer-events: none;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+}
+
+/* CAD HUD Corner Decorations */
+.cad-corner-container {
+  position: relative;
+}
+.cad-corner-tl, .cad-corner-tr, .cad-corner-bl, .cad-corner-br {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  border-color: var(--color-brand-red);
+  pointer-events: none;
+  z-index: 10;
+}
+.cad-corner-tl { top: -1px; left: -1px; border-top: 1.5px solid; border-left: 1.5px solid; }
+.cad-corner-tr { top: -1px; right: -1px; border-top: 1.5px solid; border-right: 1.5px solid; }
+.cad-corner-bl { bottom: -1px; left: -1px; border-bottom: 1.5px solid; border-left: 1.5px solid; }
+.cad-corner-br { bottom: -1px; right: -1px; border-bottom: 1.5px solid; border-right: 1.5px solid; }
+
+/* Image Hover Zoom-Pan Effects */
+.image-zoom-container {
+  overflow: hidden;
+  position: relative;
+}
+.image-zoom-img {
+  transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.image-zoom-container:hover .image-zoom-img {
+  transform: scale(1.06);
+}
