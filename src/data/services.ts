@@ -7,7 +7,7 @@ export const services: Service[] = [
     shortDescription: 'Criação de projetos residenciais e comerciais modernos, funcionais e totalmente personalizados.',
     description: 'Desenvolvemos projetos arquitetônicos exclusivos que unem estética contemporânea, funcionalidade e conforto. Cada projeto é pensado sob medida para as necessidades do cliente, respeitando as características do terreno, a incidência solar e o orçamento disponível.',
     iconName: 'Compass',
-    image: '/matheus/images/projects/project1.png',
+    image: '/images/projects/project1.png',
     benefits: [
       'Visualização em 3D realista antes do início da obra',
       'Aproveitamento máximo da iluminação e ventilação naturais',
@@ -27,7 +27,7 @@ export const services: Service[] = [
     shortDescription: 'Construção civil de alto padrão, do alicerce à entrega das chaves, com foco em qualidade e prazo.',
     description: 'Executamos sua obra com equipes experientes, materiais selecionados e um controle de qualidade rigoroso. Cuidamos de todo o processo de construção, garantindo que o que foi projetado seja fielmente executado na realidade, dentro do prazo e orçamento planejados.',
     iconName: 'Hammer',
-    image: '/matheus/images/projects/project2.png',
+    image: '/images/projects/project2.png',
     benefits: [
       'Cronograma físico-financeiro detalhado e transparente',
       'Mão de obra qualificada e especializada em acabamentos finos',
@@ -47,7 +47,7 @@ export const services: Service[] = [
     shortDescription: 'Adequação legal de imóveis junto à Prefeitura, Cartório de Imóveis e órgãos competentes.',
     description: 'Regularizamos sua situação imobiliária perante os órgãos públicos municipais e estaduais. Elaboramos projetos de regularização, laudos técnicos, habite-se, retificação de áreas e averbação de construções na matrícula do imóvel.',
     iconName: 'FileCheck',
-    image: '/matheus/images/projects/project6.png',
+    image: '/images/projects/project6.png',
     benefits: [
       'Valorização imediata do imóvel no mercado imobiliário',
       'Possibilidade de venda do imóvel através de financiamento bancário',
@@ -67,7 +67,7 @@ export const services: Service[] = [
     shortDescription: 'Modernização e expansão de espaços existentes para atender às novas necessidades da sua família.',
     description: 'Planejamos e executamos reformas e ampliações residenciais com sensibilidade e técnica. Integramos os novos espaços à estrutura existente de forma harmoniosa, melhorando a circulação, iluminação e agregando novas funcionalidades à edificação.',
     iconName: 'Maximize',
-    image: '/matheus/images/projects/project4.png',
+    image: '/images/projects/project4.png',
     benefits: [
       'Renovação total da estética e revestimentos do imóvel',
       'Integração de ambientes integrando cozinha, sala e área gourmet',
@@ -87,7 +87,7 @@ export const services: Service[] = [
     shortDescription: 'Visitas técnicas periódicas para fiscalização e controle de qualidade dos serviços executados.',
     description: 'Prestamos assessoria técnica direta na sua obra através de visitas periódicas. Supervisionamos o trabalho da equipe de construção, tiramos dúvidas de projetos, conferimos níveis, prumos, paginações de pisos e controlamos a qualidade de cada etapa da edificação.',
     iconName: 'HardHat',
-    image: '/matheus/images/projects/project6.png',
+    image: '/images/projects/project6.png',
     benefits: [
       'Garantia de fidelidade técnica ao projeto executivo aprovado',
       'Resolução ágil de dúvidas ou imprevistos técnicos diretamente no canteiro',

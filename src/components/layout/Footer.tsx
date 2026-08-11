@@ -22,14 +22,28 @@ const servicesLinks = [
 
 export function Footer() {
   return (
-    <footer className="bg-brand-dark text-white pt-16 pb-8 border-t border-brand-concrete-dark/30">
-      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16">
+    <footer className="tech-footer-grid relative overflow-hidden bg-brand-dark text-white pt-8 pb-8 border-t border-brand-concrete-dark/30">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 relative z-10">
+        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 pb-8 mb-12 border-b border-brand-concrete-dark/30 font-heading text-[9px] uppercase tracking-[0.2em] text-brand-concrete">
+          <div className="flex items-center gap-3">
+            <span className="tech-status-dot" />
+            <span>Base operacional ativa</span>
+          </div>
+          <div className="flex flex-wrap gap-x-6 gap-y-2">
+            <span>Votuporanga · SP</span>
+            <span>DDD 17</span>
+            <span>Seg–Sex · 08:00–18:00</span>
+          </div>
+        </div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 md:px-12 grid grid-cols-1 md:grid-cols-4 gap-12 md:gap-8 mb-16 relative z-10">
         {/* Brand Column */}
         <div className="flex flex-col space-y-6">
           <div className="flex items-center gap-3">
             <div className="relative w-12 h-12">
               <Image 
-                src="/matheus/images/logo/logo_white.png" 
+                src="/images/logo/logo_white.png"
                 alt="M.A. Projetos e Construções" 
                 fill 
                 className="object-contain"
@@ -114,7 +128,7 @@ export function Footer() {
             <li className="flex items-start gap-3">
               <MapPin className="w-4 h-4 mt-0.5 text-brand-red shrink-0" />
               <div className="flex flex-col">
-                <span className="text-xs text-white font-sans font-medium">São José do Rio Preto - SP</span>
+                <span className="text-xs text-white font-sans font-medium">Votuporanga - SP</span>
                 <span className="text-[11px] text-brand-concrete font-sans mt-0.5">Atendimento em toda a região do DDD 17</span>
               </div>
             </li>
@@ -145,13 +159,19 @@ export function Footer() {
       </div>
 
       {/* Footer Bottom Bar */}
-      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-brand-concrete-dark/15 flex flex-col md:flex-row items-center justify-between gap-4">
+      <div className="max-w-7xl mx-auto px-6 md:px-12 pt-8 border-t border-brand-concrete-dark/15 flex flex-col md:flex-row items-center justify-between gap-4 relative z-10">
         <p className="text-[11px] text-brand-concrete font-sans">
           &copy; {new Date().getFullYear()} M.A. Projetos e Construções. Todos os direitos reservados.
         </p>
-        <p className="text-[11px] text-brand-concrete font-sans flex items-center gap-1">
-          Desenvolvido com sofisticação estática por <span className="text-white">M.A.</span>
-        </p>
+        <a
+          href="https://avila.inc"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group text-[11px] text-brand-concrete hover:text-white font-sans flex items-center gap-1.5 transition-colors"
+        >
+          Desenvolvido pela <span className="text-white font-medium">Avila Ops Tecnologia</span>
+          <ArrowUpRight className="w-3 h-3 text-brand-red transition-transform group-hover:-translate-y-0.5 group-hover:translate-x-0.5" />
+        </a>
       </div>
     </footer>
   );

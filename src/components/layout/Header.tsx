@@ -1,5 +1,3 @@
-'use.client'; // Wait, standard next.js use client directive is "use client" (without a dot)
-// Let's write the correct directive:
 "use client";
 
 import React, { useState, useEffect } from 'react';
@@ -37,20 +35,9 @@ export function Header() {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  // Close mobile menu on path changes
-  useEffect(() => {
-    setIsOpen(false);
-  }, [pathname]);
-
-  // Clean pathname for comparison due to basePath /matheus/ and trailing slash
   const isActive = (path: string) => {
-    // pathname can be "/matheus/" or "/matheus/projetos/" or "/" in dev
-    // remove "/matheus" base to compare with nav item paths
     let cleanPath = pathname || '/';
-    if (cleanPath.startsWith('/matheus')) {
-      cleanPath = cleanPath.slice('/matheus'.length);
-    }
-    
+
     // Normalize trailing slashes
     if (cleanPath.endsWith('/') && cleanPath !== '/') {
       cleanPath = cleanPath.slice(0, -1);
@@ -65,7 +52,7 @@ export function Header() {
     <>
       <header
         className={cn(
-          'fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full',
+          'tech-header fixed top-0 left-0 right-0 z-50 transition-all duration-300 w-full',
           scrolled 
             ? 'glass-header py-3 shadow-[0_4px_30px_rgba(0,0,0,0.02)]' 
             : 'glass-header py-5 border-b border-transparent'
@@ -76,7 +63,7 @@ export function Header() {
           <Link href="/" className="flex items-center gap-3 group">
             <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
               <Image 
-                src="/matheus/images/logo/logo.png" 
+                src="/images/logo/logo.png"
                 alt="M.A. Projetos e Construções" 
                 fill 
                 className="object-contain"
@@ -161,7 +148,7 @@ export function Header() {
                   <div className="flex items-center gap-3">
                     <div className="relative w-10 h-10">
                       <Image 
-                        src="/matheus/images/logo/logo.png" 
+                        src="/images/logo/logo.png"
                         alt="M.A." 
                         fill 
                         className="object-contain"
@@ -190,6 +177,7 @@ export function Header() {
                     >
                       <Link
                         href={item.path}
+                        onClick={() => setIsOpen(false)}
                         className={cn(
                           'font-heading text-sm uppercase tracking-widest block py-2 border-b border-brand-concrete-light/20 transition-all duration-300',
                           isActive(item.path) 

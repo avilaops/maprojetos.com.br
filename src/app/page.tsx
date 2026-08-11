@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { 
@@ -12,20 +11,17 @@ import {
   Check, 
   Star,
   Maximize2,
-  Hammer,
-  ChevronRight,
-  TrendingUp,
-  MapPin
+  Hammer
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { projects } from '@/data/projects';
 import { services } from '@/data/services';
 import { testimonials } from '@/data/testimonials';
-import { createWhatsAppLink } from '@/lib/whatsapp';
 import { motion } from 'framer-motion';
 
 // Icon Map for Services
-const iconMap: Record<string, React.ComponentType<any>> = {
+const iconMap: Record<string, LucideIcon> = {
   Compass,
   Hammer,
   FileCheck,
@@ -60,7 +56,6 @@ const methodologySteps = [
 
 export default function Home() {
   const featuredProjects = projects.slice(0, 3); // Take first 3 projects for featured grid
-  const whatsappBudgetLink = createWhatsAppLink('Olá Matheus, gostaria de solicitar um orçamento para um projeto residencial.');
 
   return (
     <div className="w-full bg-noise-texture">
@@ -71,7 +66,15 @@ export default function Home() {
         <div className="absolute right-10 top-0 bottom-0 w-[1px] bg-brand-concrete-light/20 hidden lg:block" />
         <div className="absolute left-0 right-0 top-[20%] h-[1px] bg-brand-concrete-light/20 hidden lg:block" />
 
-        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full pt-8 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 pt-4 relative z-10">
+          <div className="tech-rail">
+            <span>MA / ARQ.01</span>
+            <span className="hidden sm:inline">Concepção · Execução · Controle</span>
+            <span>Votuporanga / SP</span>
+          </div>
+        </div>
+
+        <div className="max-w-7xl mx-auto px-6 md:px-12 w-full pt-10 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           {/* Hero Left Content */}
           <div className="lg:col-span-6 flex flex-col space-y-8">
             <div className="space-y-5">
@@ -136,20 +139,22 @@ export default function Home() {
             <div className="cad-corner-bl" />
             <div className="cad-corner-br" />
 
-            <div className="image-zoom-container relative aspect-[4/3] w-full bg-brand-concrete-light/10">
+            <div className="tech-viewport image-zoom-container relative aspect-[4/3] w-full bg-brand-concrete-light/10">
               <Image 
-                src="/matheus/images/hero/house.png" 
+                src="/images/hero/house.png"
                 alt="Fachada Contemporânea M.A. Projetos e Construções" 
                 fill 
                 className="image-zoom-img object-cover"
                 priority
               />
+              <span className="tech-scanline" aria-hidden="true" />
               {/* Technical HUD Overlay */}
-              <div className="absolute top-4 left-4 bg-brand-dark/85 text-white text-[9px] font-heading tracking-widest px-2.5 py-1 uppercase backdrop-blur-sm">
-                Escala 1 : 50
+              <div className="absolute z-[4] top-4 left-4 flex items-center gap-2 bg-brand-dark/85 text-white text-[9px] font-heading tracking-widest px-3 py-1.5 uppercase backdrop-blur-sm">
+                <span className="tech-status-dot" />
+                Visualização 01 · Escala 1:50
               </div>
-              <div className="absolute bottom-4 right-4 bg-brand-dark/85 text-white text-[9px] font-heading tracking-widest px-2.5 py-1 uppercase backdrop-blur-sm">
-                LAT: 20° 49' 11" S | LONG: 49° 22' 46" W
+              <div className="absolute z-[4] bottom-4 right-4 bg-brand-dark/85 text-white text-[9px] font-heading tracking-widest px-2.5 py-1 uppercase backdrop-blur-sm">
+                Base operacional: Votuporanga / SP
               </div>
             </div>
           </motion.div>
@@ -401,7 +406,7 @@ export default function Home() {
 
             <div className="image-zoom-container relative aspect-[5/6] w-full bg-brand-concrete-light/10">
               <Image 
-                src="/matheus/images/about/about_house.png" 
+                src="/images/about/about_house.png"
                 alt="Acompanhamento técnico de obra Matheus Amarante" 
                 fill 
                 className="image-zoom-img object-cover"
@@ -527,7 +532,7 @@ export default function Home() {
                   </div>
                   
                   <p className="text-xs text-brand-concrete leading-relaxed font-sans italic">
-                    "{t.comment}"
+                    &ldquo;{t.comment}&rdquo;
                   </p>
                 </div>
 
@@ -595,7 +600,7 @@ export default function Home() {
           </div>
 
           <div className="text-[8px] uppercase tracking-widest text-brand-concrete/30 font-heading">
-            M.A. PROJETOS E CONSTRUÇÕES © RIO PRETO / SP
+            M.A. PROJETOS E CONSTRUÇÕES © VOTUPORANGA / SP
           </div>
         </div>
       </section>

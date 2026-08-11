@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { useForm } from 'react-hook-form';
+import { useForm, useWatch } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import * as z from 'zod';
 import { 
@@ -10,8 +10,6 @@ import {
   Clock, 
   Send,
   CheckCircle,
-  HelpCircle,
-  ArrowRight,
   ExternalLink
 } from 'lucide-react';
 import { Instagram } from '@/components/ui/Icons';
@@ -65,7 +63,7 @@ export default function ContactPage() {
     register,
     handleSubmit,
     setValue,
-    watch,
+    control,
     formState: { errors },
     reset
   } = useForm<ContactFormData>({
@@ -79,7 +77,7 @@ export default function ContactPage() {
     }
   });
 
-  const selectedService = watch('serviceType');
+  const selectedService = useWatch({ control, name: 'serviceType' });
 
   // Register the field manually so it validates
   useEffect(() => {
@@ -88,18 +86,20 @@ export default function ContactPage() {
 
   // Handle countdown effect
   useEffect(() => {
-    let timer: NodeJS.Timeout;
-    if (showSuccessModal && countdown > 0) {
-      timer = setTimeout(() => {
+    if (!showSuccessModal) return;
+
+    const timer = window.setTimeout(() => {
+      if (countdown > 0) {
         setCountdown((prev) => prev - 1);
-      }, 1000);
-    } else if (showSuccessModal && countdown === 0) {
-      // Trigger WhatsApp open
+        return;
+      }
+
       window.open(targetWaLink, '_blank', 'noopener,noreferrer');
       setShowSuccessModal(false);
       reset();
-    }
-    return () => clearTimeout(timer);
+    }, countdown > 0 ? 1000 : 0);
+
+    return () => window.clearTimeout(timer);
   }, [showSuccessModal, countdown, targetWaLink, reset]);
 
   const onSubmit = (data: ContactFormData) => {
@@ -248,7 +248,7 @@ Mensagem: ${data.message}`;
               <label className="text-[10px] font-heading font-bold uppercase tracking-wider text-brand-concrete">Cidade / Estado</label>
               <Input
                 type="text"
-                placeholder="Ex: São José do Rio Preto - SP"
+                placeholder="Ex: Votuporanga - SP"
                 error={errors.city?.message}
                 {...register('city')}
               />
@@ -324,7 +324,7 @@ Mensagem: ${data.message}`;
               </div>
               <h3 className="font-heading font-extrabold text-white text-lg">M.A. Escritório Técnico</h3>
               <p className="text-[10px] text-brand-concrete font-sans leading-relaxed">
-                São José do Rio Preto - SP. <br />
+                Votuporanga - SP. <br />
                 Atendimento presencial mediante agendamento prévio no canteiro ou escritório.
               </p>
               <div className="text-[8px] uppercase tracking-widest text-brand-concrete/40 font-heading">

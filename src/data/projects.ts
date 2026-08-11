@@ -8,11 +8,11 @@ export const projects: Project[] = [
     city: 'São José do Rio Preto - SP',
     area: 380,
     year: '2024',
-    mainImage: '/matheus/images/projects/project1.png',
+    mainImage: '/images/projects/project1.png',
     images: [
-      '/matheus/images/projects/project1.png',
-      '/matheus/images/projects/project3.png',
-      '/matheus/images/projects/project5.png'
+      '/images/projects/project1.png',
+      '/images/projects/project3.png',
+      '/images/projects/project5.png'
     ],
     description: 'Projeto residencial contemporâneo projetado para integrar a área social com a área externa de lazer. Utiliza uma linguagem sofisticada com uso de concreto aparente, grandes vãos de vidro e painéis deslizantes de madeira.',
     challenge: 'O cliente desejava uma casa com privacidade em relação à rua, mas totalmente integrada internamente. O lote possuía um declive acentuado que precisava ser aproveitado para evitar movimentações de terra excessivas.',
@@ -33,11 +33,11 @@ export const projects: Project[] = [
     city: 'Mirassol - SP',
     area: 450,
     year: '2023',
-    mainImage: '/matheus/images/projects/project2.png',
+    mainImage: '/images/projects/project2.png',
     images: [
-      '/matheus/images/projects/project2.png',
-      '/matheus/images/projects/project5.png',
-      '/matheus/images/projects/project6.png'
+      '/images/projects/project2.png',
+      '/images/projects/project5.png',
+      '/images/projects/project6.png'
     ],
     description: 'Residência de lazer de alto padrão pensada para fins de semana em família. O projeto priorizou o conforto térmico, o contato direto com a vegetação local e uma área gourmet completa integrada à piscina de borda infinita.',
     challenge: 'Criar uma edificação ampla que mantivesse o aspecto rústico de chácara, mas sem perder o requinte e a tecnologia das residências modernas urbanas.',
@@ -58,11 +58,11 @@ export const projects: Project[] = [
     city: 'São José do Rio Preto - SP',
     area: 320,
     year: '2024',
-    mainImage: '/matheus/images/projects/project3.png',
+    mainImage: '/images/projects/project3.png',
     images: [
-      '/matheus/images/projects/project3.png',
-      '/matheus/images/projects/project1.png',
-      '/matheus/images/projects/project6.png'
+      '/images/projects/project3.png',
+      '/images/projects/project1.png',
+      '/images/projects/project6.png'
     ],
     description: 'Projeto focado na renovação visual e estrutural da fachada de uma residência de condomínio fechado, trazendo modernidade através da combinação de materiais nobres.',
     challenge: 'A antiga fachada possuía elementos datados dos anos 90, com telhado colonial aparente e muitos recortes visuais que poluíam a estética frontal da casa.',
@@ -83,11 +83,11 @@ export const projects: Project[] = [
     city: 'Catanduva - SP',
     area: 85,
     year: '2025',
-    mainImage: '/matheus/images/projects/project4.png',
+    mainImage: '/images/projects/project4.png',
     images: [
-      '/matheus/images/projects/project4.png',
-      '/matheus/images/projects/project2.png',
-      '/matheus/images/projects/project5.png'
+      '/images/projects/project4.png',
+      '/images/projects/project2.png',
+      '/images/projects/project5.png'
     ],
     description: 'Reforma completa da antiga edícula de uma residência urbana para a criação de um moderno espaço gourmet, adega climatizada e spa integrado.',
     challenge: 'O espaço disponível era estreito e pouco iluminado, cercado por muros altos nos fundos do lote, necessitando de uma intervenção que ampliasse a sensação de espaço.',
@@ -108,11 +108,11 @@ export const projects: Project[] = [
     city: 'Olímpia - SP',
     area: 210,
     year: '2024',
-    mainImage: '/matheus/images/projects/project5.png',
+    mainImage: '/images/projects/project5.png',
     images: [
-      '/matheus/images/projects/project5.png',
-      '/matheus/images/projects/project1.png',
-      '/matheus/images/projects/project2.png'
+      '/images/projects/project5.png',
+      '/images/projects/project1.png',
+      '/images/projects/project2.png'
     ],
     description: 'Casa térrea prática e sofisticada, projetada para um casal jovem. O foco do projeto foi a otimização dos fluxos de circulação e a ventilação cruzada para garantir conforto térmico na quente região de Olímpia.',
     challenge: 'Criar uma residência compacta mas que mantivesse a sensação de amplitude dos projetos de alto padrão, sem ultrapassar o limite orçamentário pré-definido.',
@@ -133,11 +133,11 @@ export const projects: Project[] = [
     city: 'Cedral - SP',
     area: 110,
     year: '2025',
-    mainImage: '/matheus/images/projects/project6.png',
+    mainImage: '/images/projects/project6.png',
     images: [
-      '/matheus/images/projects/project6.png',
-      '/matheus/images/projects/project4.png',
-      '/matheus/images/projects/project3.png'
+      '/images/projects/project6.png',
+      '/images/projects/project4.png',
+      '/images/projects/project3.png'
     ],
     description: 'Ampliação de uma residência existente para incluir uma varanda gourmet de apoio ao jardim e um anexo independente destinado a um home office silencioso.',
     challenge: 'A ampliação precisava se conectar perfeitamente à arquitetura original da casa sem parecer um "puxadinho" ou um elemento desajustado no lote.',

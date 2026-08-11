@@ -14,7 +14,7 @@ export const Button = forwardRef<HTMLButtonElement, ButtonProps>(
         ref={ref}
         disabled={disabled || isLoading}
         className={cn(
-          'inline-flex items-center justify-center font-heading font-medium tracking-wide uppercase text-xs transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-red disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer',
+          'tech-button inline-flex items-center justify-center font-heading font-medium tracking-wide uppercase text-xs transition-all duration-300 focus:outline-none focus:ring-1 focus:ring-brand-red disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer',
           // Variants
           variant === 'default' && 'bg-brand-dark text-white border border-brand-dark hover:bg-transparent hover:text-brand-dark',
           variant === 'outline' && 'bg-transparent text-brand-dark border border-brand-concrete hover:bg-brand-dark hover:text-white hover:border-brand-dark',

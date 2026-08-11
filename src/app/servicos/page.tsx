@@ -1,6 +1,5 @@
 'use client';
 
-import React from 'react';
 import Image from 'next/image';
 import { 
   Compass, 
@@ -13,13 +12,14 @@ import {
   HelpCircle,
   Phone
 } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
 import { services } from '@/data/services';
 import { Button } from '@/components/ui/Button';
 import { createWhatsAppLink } from '@/lib/whatsapp';
 import { motion } from 'framer-motion';
 
 // Map icon names from services data to Lucide Components
-const iconMap: Record<string, React.ComponentType<any>> = {
+const iconMap: Record<string, LucideIcon> = {
   Compass: Compass,
   Hammer: Hammer,
   FileCheck: FileCheck,

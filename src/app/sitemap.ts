@@ -4,7 +4,7 @@ import { projects } from '@/data/projects';
 export const dynamic = 'force-static';
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const baseUrl = 'https://avilaops.github.io/matheus';
+  const baseUrl = 'https://maprojetos.com.br';
   
   // Base routes
   const routes = ['', '/projetos', '/servicos', '/sobre', '/contato'];

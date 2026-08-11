@@ -3,7 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { Award, ShieldCheck, TrendingUp, Handshake, ArrowRight, UserCheck } from 'lucide-react';
+import { Award, ShieldCheck, TrendingUp, Handshake, ArrowRight } from 'lucide-react';
 import { Button } from '@/components/ui/Button';
 import { motion } from 'framer-motion';
 
@@ -66,10 +66,10 @@ export default function AboutPage() {
           </h2>
           <div className="space-y-4 text-xs md:text-sm text-brand-concrete leading-relaxed font-sans">
             <p>
-              A **M.A. Projetos e Construções** nasceu do desejo de integrar o design sensível da arquitetura contemporânea à solidez e ao rigor técnico da construção civil. Sediada em São José do Rio Preto - SP, a empresa atua na criação de residências exclusivas, projetos de chácaras de lazer, ampliações e regularizações imobiliárias.
+              A <strong className="font-semibold text-brand-dark">M.A. Projetos e Construções</strong> nasceu do desejo de integrar o design sensível da arquitetura contemporânea à solidez e ao rigor técnico da construção civil. Sediada em Votuporanga - SP, a empresa atua na criação de residências exclusivas, projetos de chácaras de lazer, ampliações e regularizações imobiliárias.
             </p>
             <p>
-              Sob a coordenação direta do arquiteto **Matheus Amarante**, unimos técnica de ponta com um atendimento próximo e personalizado. Entendemos que o processo de projetar e construir vai muito além do concreto e das plantas baixas: trata-se da materialização do sonho de vida de cada cliente.
+              Sob a coordenação direta do arquiteto <strong className="font-semibold text-brand-dark">Matheus Amarante</strong>, unimos técnica de ponta com um atendimento próximo e personalizado. Entendemos que o processo de projetar e construir vai muito além do concreto e das plantas baixas: trata-se da materialização do sonho de vida de cada cliente.
             </p>
             <p>
               Por isso, nos comprometemos a oferecer uma jornada tranquila. Nossos projetos executivos são extremamente detalhados, o que reduz drasticamente imprevistos no canteiro de obras. Gerenciamos cronogramas e compras com profissionalismo, assegurando a entrega da obra nos prazos contratados.
@@ -90,7 +90,7 @@ export default function AboutPage() {
 
           <div className="image-zoom-container relative w-full h-full aspect-[4/5] bg-brand-concrete-light/10">
             <Image
-              src="/matheus/images/about/about_house.png"
+              src="/images/about/about_house.png"
               alt="Canteiro de obras sob acompanhamento técnico da M.A. Projetos e Construções"
               fill
               className="image-zoom-img object-cover"

@@ -23,9 +23,9 @@ export const metadata: Metadata = {
     default: 'M.A. Projetos e Construções | Matheus Amarante Arquiteto',
     template: '%s | M.A. Projetos e Construções'
   },
-  description: 'Projetos arquitetônicos, construções residenciais, regularização de imóveis, reformas e acompanhamento de obras em São José do Rio Preto e região. Transforme seu sonho em realidade.',
+  description: 'Projetos arquitetônicos, construções residenciais, regularização de imóveis, reformas e acompanhamento de obras em Votuporanga e região. Transforme seu sonho em realidade.',
   keywords: [
-    'arquiteto em São Paulo',
+    'arquiteto em Votuporanga',
     'projetos arquitetônicos',
     'construção residencial',
     'projeto de chácara',
@@ -38,20 +38,20 @@ export const metadata: Metadata = {
   ],
   authors: [{ name: 'Matheus Amarante' }],
   creator: 'M.A. Projetos e Construções',
-  metadataBase: new URL('https://avilaops.github.io/matheus/'),
+  metadataBase: new URL('https://maprojetos.com.br/'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     type: 'website',
     locale: 'pt_BR',
-    url: 'https://avilaops.github.io/matheus/',
+    url: 'https://maprojetos.com.br/',
     title: 'M.A. Projetos e Construções | Matheus Amarante Arquiteto',
-    description: 'Projetos que transformam sonhos em realidade. Arquitetura, construção, reformas e regularização em São José do Rio Preto e região.',
+    description: 'Projetos que transformam sonhos em realidade. Arquitetura, construção, reformas e regularização em Votuporanga e região.',
     siteName: 'M.A. Projetos e Construções',
     images: [
       {
-        url: '/matheus/og-image.jpg',
+        url: '/og-image.jpg',
         width: 1200,
         height: 630,
         alt: 'M.A. Projetos e Construções',
@@ -62,7 +62,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'M.A. Projetos e Construções | Matheus Amarante Arquiteto',
     description: 'Projetos que transformam sonhos em realidade. Arquitetura e construção de alto padrão.',
-    images: ['/matheus/og-image.jpg'],
+    images: ['/og-image.jpg'],
   },
   robots: {
     index: true,
@@ -85,6 +85,7 @@ export default function RootLayout({
   return (
     <html
       lang="pt-BR"
+      data-scroll-behavior="smooth"
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
       <head>
