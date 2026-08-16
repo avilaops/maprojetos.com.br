@@ -43,7 +43,7 @@ export function Footer() {
           <div className="flex items-center gap-3">
             <div className="relative w-12 h-12">
               <Image 
-                src="/images/logo/logo_white.png"
+                src="/images/logo/logo-ma-badge.png"
                 alt="M.A. Projetos e Construções" 
                 fill 
                 className="object-contain"

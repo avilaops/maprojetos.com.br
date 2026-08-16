@@ -64,7 +64,7 @@ export function Header() {
             {/* Wordmark 2,4:1 — o slot é mais largo que alto para a marca não encolher */}
             <div className="relative w-16 h-12 transition-transform duration-300 group-hover:scale-105">
               <Image 
-                src="/images/logo/logo.png"
+                src="/images/logo/logo-ma.png"
                 alt="M.A. Projetos e Construções" 
                 fill 
                 className="object-contain"
@@ -149,7 +149,7 @@ export function Header() {
                   <div className="flex items-center gap-3">
                     <div className="relative w-14 h-10">
                       <Image
-                        src="/images/logo/logo.png"
+                        src="/images/logo/logo-ma.png"
                         alt="M.A." 
                         fill 
                         className="object-contain"
