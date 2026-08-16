@@ -1,10 +1,11 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 import { Inter, Outfit } from 'next/font/google';
 import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
+import AnalyticsClickTracker from '@/components/analytics/AnalyticsClickTracker';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -51,7 +52,7 @@ export const metadata: Metadata = {
     siteName: 'M.A. Projetos e Construções',
     images: [
       {
-        url: '/og-image.jpg',
+        url: '/og-default.png',
         width: 1200,
         height: 630,
         alt: 'M.A. Projetos e Construções',
@@ -62,7 +63,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'M.A. Projetos e Construções | Matheus Amarante Arquiteto',
     description: 'Projetos que transformam sonhos em realidade. Arquitetura e construção de alto padrão.',
-    images: ['/og-image.jpg'],
+    images: ['/og-default.png'],
   },
   robots: {
     index: true,
@@ -77,6 +78,23 @@ export const metadata: Metadata = {
   },
 };
 
+/** Mesmo `theme_color` declarado no manifest entregue pelo cliente. */
+export const viewport: Viewport = {
+  themeColor: '#ffffff',
+};
+
+/**
+ * Container GTM do maprojetos.com.br (TagFlow). Ele já publica a configuração
+ * do GA4 G-D4PW8CP274 — por isso `NEXT_PUBLIC_GA_MEASUREMENT_ID` fica vazio,
+ * para não contar cada pageview duas vezes.
+ *
+ * O ID vem embutido como padrão porque `.env*` não é versionado: com o valor
+ * só no `.env` local, qualquer build feito em outra máquina publicaria o site
+ * sem medição nenhuma. Ele é público — vai no HTML de qualquer jeito — e a
+ * variável continua sobrepondo em staging.
+ */
+const GTM_ID = process.env.NEXT_PUBLIC_GTM_ID ?? 'GTM-KF3V9QFC';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -89,7 +107,7 @@ export default function RootLayout({
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
       <head>
-        {process.env.NEXT_PUBLIC_GTM_ID && (
+        {GTM_ID && (
           <Script
             id="gtm-script"
             strategy="afterInteractive"
@@ -98,7 +116,7 @@ export default function RootLayout({
               new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
               j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
               'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-              })(window,document,'script','dataLayer','${process.env.NEXT_PUBLIC_GTM_ID}');`
+              })(window,document,'script','dataLayer','${GTM_ID}');`
             }}
           />
         )}
@@ -120,16 +138,18 @@ export default function RootLayout({
         )}
       </head>
       <body className="min-h-full flex flex-col bg-brand-light text-brand-dark selection:bg-brand-red selection:text-white">
-        {process.env.NEXT_PUBLIC_GTM_ID && (
+        {GTM_ID && (
           <noscript>
             <iframe
-              src={`https://www.googletagmanager.com/ns.html?id=${process.env.NEXT_PUBLIC_GTM_ID}`}
+              src={`https://www.googletagmanager.com/ns.html?id=${GTM_ID}`}
               height="0"
               width="0"
               style={{ display: "none", visibility: "hidden" }}
+              title="Google Tag Manager"
             />
           </noscript>
         )}
+        <AnalyticsClickTracker />
         <Header />
         <main className="flex-grow pt-24">
           {children}

@@ -141,7 +141,7 @@ export default function Home() {
 
             <div className="tech-viewport image-zoom-container relative aspect-[4/3] w-full bg-brand-concrete-light/10">
               <Image 
-                src="/images/hero/house.png"
+                src="/images/hero/house.webp"
                 alt="Fachada Contemporânea M.A. Projetos e Construções" 
                 fill 
                 className="image-zoom-img object-cover"

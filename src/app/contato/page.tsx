@@ -17,6 +17,7 @@ import { Button } from '@/components/ui/Button';
 import { Input } from '@/components/ui/Input';
 import { Textarea } from '@/components/ui/Textarea';
 import { createWhatsAppLink } from '@/lib/whatsapp';
+import { pushDataLayer } from '@/lib/analytics';
 import { motion, AnimatePresence } from 'framer-motion';
 
 // Form validation schema with Zod
@@ -103,6 +104,21 @@ export default function ContactPage() {
   }, [showSuccessModal, countdown, targetWaLink, reset]);
 
   const onSubmit = (data: ContactFormData) => {
+    // O lead nasce aqui, não no `window.open` de três segundos depois: a pessoa
+    // já entregou nome, cidade e serviço. Se o evento esperasse a abertura do
+    // WhatsApp, todo formulário preenchido em aba que perde foco antes do
+    // countdown sumiria da conversão.
+    //
+    // `serviceType` vai como `lead_subject` porque é o que decide pauta e
+    // campanha — "20 leads" e "14 de projeto arquitetônico" não respondem à
+    // mesma pergunta.
+    pushDataLayer({
+      event: 'generate_lead',
+      lead_source: 'formulario',
+      lead_subject: data.serviceType,
+      page_path: '/contato',
+    });
+
     // Format message
     const formattedMessage = `Olá, meu nome é ${data.name}.
 Gostaria de solicitar um orçamento.
