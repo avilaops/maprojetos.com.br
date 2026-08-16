@@ -61,10 +61,10 @@ export function Header() {
         <div className="max-w-7xl mx-auto px-6 md:px-12 flex items-center justify-between">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3 group">
-            {/* Wordmark 2,4:1 — o slot é mais largo que alto para a marca não encolher */}
-            <div className="relative w-16 h-12 transition-transform duration-300 group-hover:scale-105">
+            {/* A marca entra como símbolo (mesma forma do favicon), já que o texto ao lado escreve M.A. */}
+            <div className="relative w-12 h-12 transition-transform duration-300 group-hover:scale-105">
               <Image 
-                src="/images/logo/logo-ma.png"
+                src="/images/logo/logo-ma-simbolo.png"
                 alt="M.A. Projetos e Construções" 
                 fill 
                 className="object-contain"
@@ -147,9 +147,9 @@ export function Header() {
               <div>
                 <div className="flex items-center justify-between mb-12">
                   <div className="flex items-center gap-3">
-                    <div className="relative w-14 h-10">
+                    <div className="relative w-10 h-10">
                       <Image
-                        src="/images/logo/logo-ma.png"
+                        src="/images/logo/logo-ma-simbolo.png"
                         alt="M.A." 
                         fill 
                         className="object-contain"
