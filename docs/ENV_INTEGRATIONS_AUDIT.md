@@ -27,7 +27,7 @@ Não existem referências a variáveis de ambiente, GTM, GA4 ou TagFlow no códi
 
 | Variável | Arquivo de origem | Ferramenta | Referenciada | Quantidade de referências | Arquivos | Situação |
 |---|---|---|---|---:|---|---|
-| — | — | — | — | 0 | — | Nenhuma variável encontrada. |
+| - | - | - | - | 0 | - | Nenhuma variável encontrada. |
 
 ## Variáveis usadas no código e ausentes no ambiente
 
@@ -56,4 +56,4 @@ Não foi possível comparar: ambos os arquivos estão ausentes. Nenhum valor foi
 
 ## Histórico de auditorias
 
-- 22/07/2026 — Auditoria inicial; site público acessível e sem GTM/GA4/TagFlow.
+- 22/07/2026, Auditoria inicial; site público acessível e sem GTM/GA4/TagFlow.

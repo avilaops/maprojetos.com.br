@@ -8,7 +8,8 @@ export default function robots(): MetadataRoute.Robots {
     rules: {
       userAgent: '*',
       allow: '/',
-      disallow: '/_next/',
+      // Sem `disallow: /_next/`: o Googlebot precisa baixar o JS/CSS de
+      // /_next/static/ para renderizar a página; bloquear quebra a renderização.
     },
     sitemap: `${baseUrl}/sitemap.xml`,
   };
