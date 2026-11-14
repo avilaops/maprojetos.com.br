@@ -20,6 +20,28 @@ const outfit = Outfit({
   display: 'swap',
 });
 
+const siteStructuredData = {
+  '@context': 'https://schema.org',
+  '@graph': [
+    {
+      '@type': 'Organization',
+      '@id': 'https://maprojetos.com.br/#organization',
+      name: 'M.A. Projetos e Construções',
+      url: 'https://maprojetos.com.br/',
+      logo: 'https://maprojetos.com.br/images/logo/logo-ma-simbolo.png',
+      image: 'https://maprojetos.com.br/og-default.png',
+    },
+    {
+      '@type': 'WebSite',
+      '@id': 'https://maprojetos.com.br/#website',
+      name: 'M.A. Projetos e Construções',
+      url: 'https://maprojetos.com.br/',
+      inLanguage: 'pt-BR',
+      publisher: { '@id': 'https://maprojetos.com.br/#organization' },
+    },
+  ],
+};
+
 export const metadata: Metadata = {
   ...pageMetadata({
     path: '/',
@@ -87,6 +109,13 @@ export default function RootLayout({
       className={`${inter.variable} ${outfit.variable} h-full antialiased`}
     >
       <head>
+        <script
+          id="site-structured-data"
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(siteStructuredData).replace(/</g, '\\u003c'),
+          }}
+        />
         {GTM_ID && (
           <Script
             id="gtm-script"
