@@ -5,6 +5,7 @@ import { notFound } from 'next/navigation';
 import { projects } from '@/data/projects';
 import { Button } from '@/components/ui/Button';
 import { createWhatsAppLink } from '@/lib/whatsapp';
+import { pageMetadata } from '@/lib/page-metadata';
 import { 
   ArrowLeft, 
   MapPin, 
@@ -34,6 +35,19 @@ export async function generateStaticParams() {
   return projects.map((project) => ({
     slug: project.slug,
   }));
+}
+
+export async function generateMetadata({ params }: PageProps) {
+  const { slug } = await params;
+  const project = projects.find((item) => item.slug === slug);
+  if (!project) notFound();
+
+  return pageMetadata({
+    path: `/projetos/${project.slug}/`,
+    title: project.title,
+    description: project.description,
+    image: project.mainImage,
+  });
 }
 
 export default async function ProjectDetailPage({ params }: PageProps) {

@@ -25,6 +25,7 @@ jobs:
         working-directory: .
         run: |
           npm ci
+          npx tsc --noEmit
           npm run build
       - name: Check out text publisher
         uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262
@@ -38,6 +39,8 @@ jobs:
         run: npm ci --ignore-scripts --omit=dev
       - name: Generate public MDX and Markdown
         run: node .publicacao-texto/bin/publicar-texto.mjs --diretorio out --origem https://maprojetos.com.br
+      - name: Verify exported SEO and text metadata
+        run: python3 scripts/verify-seo.py out --expected-routes 11 --text
       - name: Publish Pages
         if: github.event_name != 'pull_request'
         env:
