@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 
 const siteName = 'M.A. Projetos e Construções';
+export const titleTemplate = `%s • ${siteName}`;
 export const homeTitle = `Matheus Amarante Arquiteto • ${siteName}`;
 
 /** Metadados da rota, sem herdar a canonical ou a prévia da página inicial. */

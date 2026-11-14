@@ -6,7 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
 import AnalyticsClickTracker from '@/components/analytics/AnalyticsClickTracker';
-import { homeTitle, pageMetadata } from '@/lib/page-metadata';
+import { homeTitle, pageMetadata, titleTemplate } from '@/lib/page-metadata';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   }),
   title: {
     default: homeTitle,
-    template: '%s • M.A. Projetos e Construções'
+    template: titleTemplate
   },
   keywords: [
     'arquiteto em Votuporanga',
