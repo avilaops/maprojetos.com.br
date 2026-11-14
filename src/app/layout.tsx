@@ -6,6 +6,7 @@ import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
 import { WhatsAppButton } from '@/components/layout/WhatsAppButton';
 import AnalyticsClickTracker from '@/components/analytics/AnalyticsClickTracker';
+import { homeTitle, pageMetadata } from '@/lib/page-metadata';
 
 const inter = Inter({
   variable: '--font-inter',
@@ -20,11 +21,15 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
+  ...pageMetadata({
+    path: '/',
+    title: 'Matheus Amarante Arquiteto',
+    description: 'Projetos arquitetônicos, construções residenciais, regularização de imóveis, reformas e acompanhamento de obras em Votuporanga e região. Transforme seu sonho em realidade.',
+  }),
   title: {
-    default: 'M.A. Projetos e Construções | Matheus Amarante Arquiteto',
-    template: '%s | M.A. Projetos e Construções'
+    default: homeTitle,
+    template: '%s • M.A. Projetos e Construções'
   },
-  description: 'Projetos arquitetônicos, construções residenciais, regularização de imóveis, reformas e acompanhamento de obras em Votuporanga e região. Transforme seu sonho em realidade.',
   keywords: [
     'arquiteto em Votuporanga',
     'projetos arquitetônicos',
@@ -40,31 +45,6 @@ export const metadata: Metadata = {
   authors: [{ name: 'Matheus Amarante' }],
   creator: 'M.A. Projetos e Construções',
   metadataBase: new URL('https://maprojetos.com.br/'),
-  alternates: {
-    canonical: '/',
-  },
-  openGraph: {
-    type: 'website',
-    locale: 'pt_BR',
-    url: 'https://maprojetos.com.br/',
-    title: 'M.A. Projetos e Construções | Matheus Amarante Arquiteto',
-    description: 'Projetos que transformam sonhos em realidade. Arquitetura, construção, reformas e regularização em Votuporanga e região.',
-    siteName: 'M.A. Projetos e Construções',
-    images: [
-      {
-        url: '/og-default.png',
-        width: 1200,
-        height: 630,
-        alt: 'M.A. Projetos e Construções',
-      },
-    ],
-  },
-  twitter: {
-    card: 'summary_large_image',
-    title: 'M.A. Projetos e Construções | Matheus Amarante Arquiteto',
-    description: 'Projetos que transformam sonhos em realidade. Arquitetura e construção de alto padrão.',
-    images: ['/og-default.png'],
-  },
   robots: {
     index: true,
     follow: true,

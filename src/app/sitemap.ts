@@ -11,7 +11,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   
   const staticUrls = routes.map((route) => ({
     url: `${baseUrl}${route}/`,
-    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: route === '' ? 1.0 : 0.8,
   }));
@@ -19,7 +18,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Dynamic project routes
   const projectUrls = projects.map((project) => ({
     url: `${baseUrl}/projetos/${project.slug}/`,
-    lastModified: new Date(),
     changeFrequency: 'monthly' as const,
     priority: 0.6,
   }));
