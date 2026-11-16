@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from 'next';
 import { Inter, Outfit } from 'next/font/google';
+import Script from 'next/script';
 import './globals.css';
 import { Header } from '@/components/layout/Header';
 import { Footer } from '@/components/layout/Footer';
@@ -104,6 +105,7 @@ export default function RootLayout({
         />
       </head>
       <body className="min-h-full flex flex-col bg-brand-light text-brand-dark selection:bg-brand-red selection:text-white">
+        <Script type="module" src="/measurement/site.mjs" strategy="afterInteractive" />
         <Header />
         <main className="flex-grow pt-24">
           {children}

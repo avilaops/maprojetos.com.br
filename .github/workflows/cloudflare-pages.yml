@@ -27,6 +27,7 @@ jobs:
         working-directory: .
         run: |
           npm ci
+          node --test scripts/measurement.test.mjs
           npx tsc --noEmit
           npm run build
       - name: Check out text publisher
