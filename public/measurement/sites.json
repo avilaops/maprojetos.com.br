@@ -1,0 +1,40 @@
+{
+  "operations": {
+    "institutional": {
+      "name": "Avila • Institucionais",
+      "id": "GTM-MMTBHNRN"
+    },
+    "ecommerce": {
+      "name": "Avila • E-commerce",
+      "id": "GTM-M6JQNNMS"
+    },
+    "platform": {
+      "name": "Avila • Plataforma de e-commerce",
+      "id": "GTM-KLP5RSCZ"
+    },
+    "saas": {
+      "name": "Avila • SaaS",
+      "id": "GTM-NQSKDVVG"
+    }
+  },
+  "sites": [
+    {
+      "category": "institucional",
+      "status": "Não informado",
+      "domain": "maprojetos.com.br",
+      "gatewayPath": "/avmetrics/",
+      "operation": "institutional",
+      "aliases": [
+        "www.maprojetos.com.br"
+      ],
+      "applicationPrefixes": [],
+      "publicPrefixes": [],
+      "routeStatus": "pending-inventory",
+      "measurementId": "G-H0RQ7WFD1Y",
+      "property": "properties/564382752",
+      "stream": "properties/564382752/dataStreams/16344284229",
+      "publicPaths": [],
+      "consentAdapter": "avila"
+    }
+  ]
+}
