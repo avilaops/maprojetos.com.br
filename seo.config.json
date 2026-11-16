@@ -1,0 +1,31 @@
+{
+  "origem": "https://maprojetos.com.br",
+  "nome": "M.A. Projetos e Construções",
+  "idioma": "pt-BR",
+  "imagem": "/og-default.png",
+  "icone": "/icon.png",
+  "fontesGlobais": [
+    "seo.config.json",
+    "src/app/layout.tsx",
+    "src/lib/page-metadata.ts",
+    "src/components/layout",
+    "src/data"
+  ],
+  "fontesPorRota": {
+    "/index.html": [
+      "src/app/page.tsx"
+    ],
+    "/sobre/index.html": [
+      "src/app/sobre"
+    ],
+    "/contato/index.html": [
+      "src/app/contato"
+    ],
+    "/servicos/index.html": [
+      "src/app/servicos"
+    ],
+    "/projetos/index.html": [
+      "src/app/projetos"
+    ]
+  }
+}
